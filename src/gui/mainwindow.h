@@ -65,6 +65,7 @@ private:
 
 	NeovimConnector* m_nvim{ nullptr };
 	ErrorWidget* m_errorWidget{ nullptr };
+	QWidget* m_wrapper{ nullptr };
 	QSplitter* m_window{ nullptr };
 	TreeView* m_tree{ nullptr };
 	Shell* m_shell{ nullptr };

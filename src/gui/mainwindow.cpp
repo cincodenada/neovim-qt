@@ -75,7 +75,10 @@ void MainWindow::init(NeovimConnector *c)
 	const int splitterWidth{ m_window->width() };
 	m_window->setSizes({ splitterWidth * 25 / 100, splitterWidth * 75 / 100 });
 
-	m_stack.insertWidget(1, m_window);
+	m_wrapper = new QWidget();
+	m_window->addWidget(m_window);
+
+	m_stack.insertWidget(1, m_wrapper);
 	m_stack.setCurrentIndex(1);
 
 	connect(m_shell, &Shell::neovimAttachmentChanged, this, &MainWindow::handleNeovimAttachment);
